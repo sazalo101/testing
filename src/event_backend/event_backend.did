@@ -1,3 +1,5 @@
-service : {
-    "greet": (text) -> (text) query;
+type Event = record { id : nat64; date : text; name : text };
+service : () -> {
+  add_event : (text, text) -> (nat64);
+  get_event : (nat64) -> (opt Event) query;
 }
